@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--
+theme name:     Animatron
+author:         SniperBrasil, Sniper_Rio
+version:		1.0
+email:			gilsonsnipergamer@gmail.com
+System 			Retrobat/Batocera/Emuelec
+-->
+
+
+<theme>
+
+<formatVersion>7</formatVersion>
+
+<!-- mostrar controle e pistola conectada -->
+	<view name="screen">
+
+		<controllerActivity name="controllerActivity">
+			<pos>0.350 0.015</pos>
+			<size>0.100 0.04</size>
+			<!--<horizontalAlignment>right</horizontalAlignment>-->
+			<itemSpacing>0.003</itemSpacing>
+			<imagePath>./_art/icons/gamepad.png</imagePath>
+			<gunPath>./_art/icons/gun.png</gunPath>
+			<color>ffff00</color>
+			<activityColor>ffffff</activityColor>
+			<hotkeyColor>${userDarkColor}</hotkeyColor>
+		</controllerActivity>
+		<controllerActivity name="controllerActivity" tinyScreen="true">
+			<visible>false</visible>
+		</controllerActivity>
+		
+	</view>	
+    
+<!--  Animacao por sistema  -->
+<include>./_art/anima/${system.theme}/${system.theme}.xml</include>
+
+<!-- Inicio visualização tela inicial -->
+<view name="system">
+
+<!-- define musica do tema -->
+    <sound name="directory">
+    <path>./_art/music</path>
+	</sound>
+	
+	
+<!--  construcao dos paineis  -->
+<image name="back_padrao_vertical" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.100 0.475</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.185 0.950</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>000000</color>
+</image>
+
+<image name="back_padrao_vertical_fino_esq" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.197 0.400</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.010 0.800</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>00008B</color>
+</image>
+
+<image name="back_padrao_vertical_fino_dir" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.985 0.400</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.010 0.800</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>00008B</color>
+</image>
+
+<image name="back_padrao_vertical_fino_preto" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.995 0.420</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.010 0.930</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>000000</color>
+</image>
+
+<image name="back_padrao_horizontal_fino_baixo" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.591 0.763</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.798 0.015</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>00008B</color>
+</image>
+
+<image name="back_padrao_horizontal_fino_cima" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.591 0.008</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.798 0.015</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>00008B</color>
+</image>
+
+<image name="back_padrao_horizontal_baixo" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.550 0.860</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.880 0.180</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>000000</color>
+</image>
+
+<image name="back_padrao_horizontal_rodape" extra="true">
+     <origin>0.5 0.5</origin>
+     <path>./_art/back_padrao.png</path>  
+     <pos>0.500 0.975</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.995 0.050</size>
+	 <opacity>1</opacity>
+     <zIndex>4</zIndex>
+     <color>00008B</color>
+</image>
+
+<!-- papel de parede -->
+<image name="wp_master" extra="true">
+		 <origin>0.5 0.5</origin>
+		 <pos>0.590 0.385</pos>
+         <size>0.7970 0.7530</size>
+		 <delay>0</delay>
+		 <path>./_art/background/${system.theme}.jpg</path>
+	 <zIndex>2</zIndex>
+	 <storyboard>
+<animation property="scale" from="1.3" to="0.98" begin="0" duration="600" mode="linear"/>
+</storyboard>
+</image>
+
+<!-- video sobreposto -->
+<video name="video_master" extra="true">
+		 <origin>0.5 0.5</origin>
+		 <pos>0.590 0.385</pos>
+         <size>0.7970 0.7530</size>
+		 <path>./_art/video/${system.theme}.mp4</path>
+	 <zIndex>3</zIndex>
+	 <storyboard>
+<animation property="scale" from="1.3" to="0.98" begin="100" duration="600" mode="linear"/>
+</storyboard>
+</video>
+
+<!--  Roleta tela inicial  -->
+<carousel name="systemcarousel">
+		<defaultTransition>instant</defaultTransition>
+	    <pos>0.025 0.015</pos>
+        <size>1 0.92</size>
+		<type>vertical</type>
+        <zIndex>5000</zIndex>         
+        <logoScale>1.05</logoScale> 
+        <logoSize>0.13 0.135</logoSize>
+        <color>00000000</color>
+        <logoAlignment>left</logoAlignment>
+        <maxLogoCount>7</maxLogoCount>
+        <logoRotation>6</logoRotation>		
+</carousel>
+
+<image name="logo">
+<storyboard event="activate">
+<animation property="scale" from="1.0" to="1.90" begin="300" duration="200" mode="Linear"/>
+<animation property="x" to="0.02" begin="300" duration="200" mode="linear"/>
+<animation property="opacity" to="1" begin="0" duration="500" mode="Linear"/>
+</storyboard>
+
+<storyboard event="scroll">
+<animation property="opacity" from="1" to="0.2" begin="300" duration="500" mode="Linear"/>
+</storyboard>
+
+<!--storyboard event="deactivate">
+<animation property="opacity" from="1" to="0" begin="10" duration="500" mode="Linear"/>
+</storyboard-->
+
+</image>
+
+
+
+<!--  Ponteira tela inicial  -->
+<image name="pointer" extra="true">
+<pos>0.001 0.419</pos>
+<maxSize>0.1 0.1</maxSize>
+<path>./_art/pointer_home/default.png</path>
+<path>./_art/pointer_home/${system.theme}.png</path>
+<path>./_art/pointer_home/${system.theme}.webp</path>
+<zIndex>8</zIndex>
+<storyboard repeat="forever">
+<animation property="x" from="0.001" to="0.008" duration="50" autoreverse="true" begin="1500" repeat="1"/>
+</storyboard>
+</image>
+
+
+<!--  logo do carrossel do tema  -->
+<image name="logo">
+        <path>./_art/logo/${system.theme}.png</path>
+</image>
+
+
+<!--  Painel de fundo do video  -->
+<image name="back_video" extra="true">
+     <path>./_art/back_video.png</path>  
+     <pos>0.8610 0.785</pos>
+     <origin>0.5 0.5</origin>
+     <size>0.240 0.285</size>
+	 <opacity>99</opacity>
+     <zIndex>5</zIndex>
+     <color>ffff00</color>
+</image>
+
+<!--  video do menu principal do tema  -->
+<video name="video" extra="true">
+     <path>{random}</path>  
+     <pos>0.8610 0.785</pos>
+     <origin>0.5 0.5</origin>
+	 <size>0.220 0.250</size>
+     <delay>1</delay>
+     <zIndex>6</zIndex>
+     <showSnapshotNoVideo>false</showSnapshotNoVideo>
+     <showSnapshotDelay>false</showSnapshotDelay>
+     <color>FFFFFF</color>
+</video>
+
+<!--  Bolacha do video  -->
+<image name="bolacha" extra="true">
+     <path>./_art/logo2/${system.theme}.png</path>  
+     <pos>0.8610 0.785</pos>
+     <origin>0.5 0.5</origin>
+     <maxSize>0.180 0.420</maxSize>
+	 <zIndex>5</zIndex>
+     <color>FFFFFF</color>
+</image>
+
+<!--  Exibe equipamento  -->
+<image name="hardware" extra="static">
+			<origin>0 0</origin>
+			<pos>0.28 0.70</pos>
+			<!--size>0.220 0.230</size-->
+			<maxSize>0.220 0.230</maxSize>
+			<path>./_art/_hardware/${system.theme}.png</path>
+			<linearSmooth>true</linearSmooth>
+			<zIndex>5</zIndex>
+			<storyboard> 
+			<animation property="y" from="0.60" begin="300" duration="1000" mode="Bump"/>
+			<animation property="rotation" from="-3" to="3" duration="1000" autoreverse="true" begin="300" repeat="forever"/>
+			</storyboard> 
+		</image>
+
+<!--  Exibe quantidade de jogos do sistema  -->	  
+ <text name="systemInfo">
+		<glowColor>000000</glowColor>
+		<origin>0.5 0.5</origin>
+        <pos>0.620 0.880</pos>
+        <backgroundColor>00000000</backgroundColor>
+        <color>ffff00</color>
+	    <rotation>0</rotation> 
+        <fontPath>./_art/font/gobold-blocky-regular.otf</fontPath>
+	    <fontSize>0.040</fontSize>
+        <zIndex>5</zIndex>
+</text>   
+
+<!--  Tipo de Hardware  -->	
+<text name="infoTIPOplataforma" extra="true">
+<fontSize>0.040</fontSize>
+<backgroundRoundCorners>0.25</backgroundRoundCorners>
+<minSize>0.10 0.10</minSize>
+<opacity>50</opacity>
+<fontPath>./_art/font/gobold-blocky-regular.otf</fontPath>
+<pos>0.620 0.820</pos>
+<origin>0.5 0.5</origin>
+<text>{system:hardwareType}</text>
+<text if="${system.hardwareType} == 'arcade'">* ARCADES *</text>
+<text if="${system.hardwareType} == 'console'">* CONSOLES *</text>
+<text if="${system.hardwareType} == 'computer'">* COMPUTADORES *</text>
+<text if="${system.hardwareType} == 'extension'">* EXTENSÃO *</text>
+<text if="${system.hardwareType} == 'pinball'">* PINBALL *</text>
+<text if="${system.hardwareType} == 'port'">* PORT *</text>
+<text if="${system.hardwareType} == 'portable'">* PORTATEIS *</text>
+<text if="${system.hardwareType} == 'auto collection'">* COLEÇÃO AUTOMATICA *</text>
+<text if="${system.hardwareType} == 'custom collection'">* COLEÇÃO PESSOAL *</text>
+<text if="${system.hardwareType} == 'retrobat'">* EMULADORES *</text>
+<Alignment>right</Alignment>
+<glowColor>ffffff</glowColor>
+<glowSize>3</glowSize>
+<zIndex>200</zIndex>
+</text>
+
+<helpsystem name="help">
+     <textColor>ffffff</textColor>
+     <origin>0.5 0.5</origin>
+     <fontPath>./_art/font/Roboto-Medium.ttf</fontPath>
+     <fontSize>0.0255</fontSize>     
+     <pos>0.460 0.9784</pos> 
+	 <iconColor>ffff00</iconColor>
+      <iconA>./resources/help/buttons_east.svg</iconA>
+      <iconB>./resources/help/buttons_south.svg</iconB>
+      <iconX>./resources/help/buttons_north.svg</iconX>
+      <iconY>./resources/help/buttons_west.svg</iconY>
+</helpsystem>
+
+
+
+</view>
+
+<!-- Script do Menu principal -->
+<view name="menu">
+   
+      <menuText name="menutitle">
+         <fontPath>./_art/font/Roboto-Medium.ttf</fontPath>
+		 <color>00FF00</color>
+         <fontSize>0.029</fontSize>
+      </menuText>
+	  
+      <menuText name="menufooter">
+         <fontPath>./_art/font/arcade_light.ttf</fontPath>
+		 <color>00FF00</color>
+         <fontSize>0.030</fontSize>
+      </menuText>
+	  
+    <menuText name="menutext">
+      <fontPath>./_art/font/Roboto-Medium.ttf</fontPath>
+      <fontSize>0.025</fontSize>
+	  <color>ffffff</color>
+      <selectorGradientType>horizontal</selectorGradientType>
+    </menuText>
+	
+    <menuTextSmall name="menutextsmall">
+      <fontPath>./_art/font/Roboto-Medium.ttff</fontPath>
+	  <color>3366ff</color>
+      <fontSize>0.030</fontSize>
+    </menuTextSmall>
+	
+    <menuBackground name="menubg">
+	<color>000000B7</color>
+	  <path>./_art/frame.png</path>
+	  <cornerSize>32 32</cornerSize>
+    </menuBackground>
+	
+	<menuTextEdit name="menutextedit">
+      <inactive>./_art/textinput_ninepatch.png</inactive>
+      <active>./_art/textinput_ninepatch_active.png</active>
+    </menuTextEdit>
+	
+	
+    <menuIcons name="menuicons">
+      <iconKodi>./_diversos/Icon Config Menu/Kodi.png</iconKodi>
+      <iconSystem>./_diversos/Icon Config Menu/System.png</iconSystem>
+      <iconUpdates>./_diversos/Icon Config Menu/Updates.png</iconUpdates>
+      <iconGames>./_diversos/Icon Config Menu/Games.png</iconGames>
+      <iconControllers>./_diversos/Icon Config Menu/Controllers.png</iconControllers>
+      <iconUI>./_diversos/Icon Config Menu/UI.png</iconUI>
+      <iconSound>./_diversos/Icon Config Menu/Sound.png</iconSound>
+      <iconNetwork>./_diversos/Icon Config Menu/Network.png</iconNetwork>
+      <iconScraper>./_diversos/Icon Config Menu/Scraper.png</iconScraper>
+      <iconAdvanced>./_diversos/Icon Config Menu/Advanced.png</iconAdvanced>
+      <iconQuit>./_diversos/Icon Config Menu/Quit.png</iconQuit>
+      <iconRestart>./_diversos/Icon Config Menu/Restart.png</iconRestart>
+      <iconShutdown>./_diversos/Icon Config Menu/Shutdown.png</iconShutdown>
+      <iconFastShutdown>./_diversos/Icon Config Menu/Fastshutdown.png</iconFastShutdown>
+      <iconRetroachievements>./_diversos/Icon Config Menu/Contest.png</iconRetroachievements>
+	  <iconEmuelec>./_diversos/Icon Config Menu/Emuelec.png</iconEmuelec>
+    </menuIcons>
+
+</view>
+
+<!--- Opção de Gamelist --->
+
+<include name="gamecarousel">./gamecarousel.xml</include>
+<include name="detailed">./detailed.xml</include>
+ 
+
+<view name="screen">
+		<text name="clock" extra="static">
+			<origin>0.5 0.5</origin>
+			<pos>0.940 0.975</pos>
+			<fontSize>0.035</fontSize>
+			<fontPath>./_art/font/Digib.ttf</fontPath>
+			<color>ffff00</color>
+</text>	
+</view>
+
+</theme>
